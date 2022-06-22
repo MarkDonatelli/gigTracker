@@ -1,9 +1,8 @@
 import { defineStore } from 'pinia';
 
-export const useCounterStore = defineStore({
-  id: 'counter',
+export const useGigsStore = defineStore({
+  id: 'gigs',
   state: () => ({
-    counter: 0,
     gigs: [
       {
         venue: '',
@@ -15,7 +14,7 @@ export const useCounterStore = defineStore({
       },
       {
         venue: '',
-        amount: 200,
+        amount: 600,
       },
       {
         venue: '',
@@ -24,18 +23,13 @@ export const useCounterStore = defineStore({
     ],
   }),
   getters: {
-    doubleCount: (state) => state.counter * 2,
     getTotal: (state) => {
-      let total = 0;
-      state.gigs.forEach((item) => {
-        total += item.amount;
-      });
-      return total;
+      return state.gigs
+        .map((item) => item.amount)
+        .reduce((acc, amount) => {
+          return (acc += amount);
+        }, 0);
     },
   },
-  actions: {
-    increment() {
-      this.counter++;
-    },
-  },
+  actions: {},
 });
