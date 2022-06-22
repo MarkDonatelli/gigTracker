@@ -1,6 +1,7 @@
 <script setup>
 import GigList from '@/components/GigList.vue';
 import GigTotal from '@/components/GigTotal.vue';
+import AddGigModal from '@/components/AddGigModal.vue';
 </script>
 
 <template>
@@ -23,6 +24,8 @@ import GigTotal from '@/components/GigTotal.vue';
 
   <GigList />
   <GigTotal />
+
+  <AddGigModal />
 </template>
 
 <style>

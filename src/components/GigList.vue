@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="flex flex-wrap">
+  <div class="flex flex-wrap" id="gigList">
     <!-- gig info-->
     <div class="flex flex-item flex-auto w-full md:w-2/4 bg-yellow p-5">
       <div class="flex-item__contents font-bold text-5xl">
