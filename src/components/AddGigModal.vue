@@ -1,22 +1,35 @@
 <script setup>
 /*
-imports
+props
 */
 
-import { ref } from 'vue';
+const props = defineProps({
+  modelValue: {
+    type: Boolean,
+    default: false,
+  },
+});
 
 /*
-modal
+emits
 */
 
-const isActive = ref(false);
+const emit = defineEmits(['update:modelValue']);
+
+/*
+close modal
+*/
+const closeModal = () => {
+  emit('update:modelValue', false);
+};
 </script>
 
 <template>
   <div
-    v-if="isActive"
+    v-if="props.modelValue"
     class="modal bg-black/50 h-screen absolute top-0 right-0 left-0"
   >
-    modal
+    modals
+    <button @click="closeModal">Close</button>
   </div>
 </template>

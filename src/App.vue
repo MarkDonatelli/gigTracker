@@ -1,7 +1,22 @@
 <script setup>
+/*
+imports
+*/
+import { reactive } from 'vue';
 import GigList from '@/components/GigList.vue';
 import GigTotal from '@/components/GigTotal.vue';
 import AddGigModal from '@/components/AddGigModal.vue';
+
+/*
+modals
+*/
+const modals = reactive({
+  addGig: false,
+});
+
+const openGigModal = () => {
+  modals.addGig = true;
+};
 </script>
 
 <template>
@@ -14,6 +29,7 @@ import AddGigModal from '@/components/AddGigModal.vue';
           src="@/assets/images/new.svg"
         />
         <button
+          @click="openGigModal"
           class="btn btn-standard text-4xl font-bold border-black border-2 px-5 py-2 m-4 bg-green"
         >
           Add Gig!
@@ -25,7 +41,7 @@ import AddGigModal from '@/components/AddGigModal.vue';
   <GigList />
   <GigTotal />
 
-  <AddGigModal />
+  <AddGigModal v-if="modals.addGig" v-model="modals.addGig" />
 </template>
 
 <style>
