@@ -21,7 +21,7 @@ const openGigModal = () => {
 
 <template>
   <header
-    class="flex items-center justify-center border-b-4 border-black mb-12"
+    class="flex items-center justify-center border-b-4 border-black mb-14"
   >
     <h1 class="text-[9rem] font-black">Gig Tracker</h1>
     <div class="button-container absolute right-8">
@@ -32,7 +32,7 @@ const openGigModal = () => {
         />
         <button
           @click="openGigModal"
-          class="btn btn-standard text-4xl font-bold border-black border-2 px-5 py-2 m-4 bg-green"
+          class="btn btn-standard text-4xl font-bold border-black border-4 px-5 py-2 m-4 bg-lightBlue"
         >
           Add Gig!
         </button>
