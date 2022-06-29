@@ -20,7 +20,9 @@ const openGigModal = () => {
 </script>
 
 <template>
-  <header class="flex items-center justify-center border-b-4 border-black">
+  <header
+    class="flex items-center justify-center border-b-4 border-black mb-12"
+  >
     <h1 class="text-[9rem] font-black">Gig Tracker</h1>
     <div class="button-container absolute right-8">
       <div class="button-container__content relative">
