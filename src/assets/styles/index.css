@@ -45,4 +45,8 @@
 
     src: url('/fonts/DarkerGrotesque-Black.ttf') format('truetype');
   }
+
+  .btn {
+    @apply font-bold border-black border-4 bg-red-500;
+  }
 }

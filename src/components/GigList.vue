@@ -2,7 +2,7 @@
 
 <template>
   <div
-    class="flex flex-wrap justify-center gap-10 px-6 max-w-[1700px] w-full mx-auto"
+    class="flex flex-wrap justify-center gap-10 px-6 max-w-[1700px] w-full mx-auto relative"
     id="gigList"
   >
     <!-- gig info-->

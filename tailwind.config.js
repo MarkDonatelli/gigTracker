@@ -1,6 +1,12 @@
+const { screens } = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
+    screens: {
+      xs: '475px',
+      ...screens,
+    },
     extend: {
       fontFamily: {
         sans: ['Darker Grotesque', 'sans-serif'],
@@ -13,5 +19,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 };
