@@ -1,4 +1,15 @@
-<script setup></script>
+<script setup>
+/*
+imports
+*/
+import { useGigsStore } from '@/stores/gigs';
+
+/*
+gigs store
+*/
+
+const gigsStore = useGigsStore();
+</script>
 
 <template>
   <div
@@ -7,57 +18,24 @@
   >
     <!-- gig info-->
     <div
-      class="flex flex-item rotate-[10deg] bg-yellow p-5 hover:rotate-0 cursor-pointer border-4 border-black mb-8"
+      v-for="gig in gigsStore.gigs"
+      :key="gig.date"
+      :class="[
+        gig.color === 'yellow'
+          ? 'bg-yellow'
+          : gig.color === 'pink'
+          ? 'bg-pink'
+          : gig.color === 'blue'
+          ? 'bg-lightBlue'
+          : 'bg-green',
+      ]"
+      class="flex flex-item rotate-[10deg] p-5 hover:rotate-0 cursor-pointer border-4 border-black mb-8"
     >
       <div class="flex-item__contents font-bold text-4xl">
         <div class="flex-item__content--info">
-          <p>Venue: Landsdowne Pub</p>
-          <p>Date: 6/15/2022</p>
-          <p>Amount Paid: $200</p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="flex flex-item rotate-[10deg] bg-pink p-5 hover:rotate-0 cursor-pointer border-4 border-black mb-8"
-    >
-      <div class="flex-item__contents font-bold text-4xl">
-        <div class="flex-item__content--info">
-          <p>Venue: Landsdowne Pub</p>
-          <p>Date: 6/15/2022</p>
-          <p>Amount Paid: $200</p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="flex flex-item rotate-[10deg] bg-lightBlue p-5 hover:rotate-0 cursor-pointer border-4 border-black mb-8"
-    >
-      <div class="flex-item__contents font-bold text-4xl">
-        <div class="flex-item__content--info">
-          <p>Venue: Landsdowne Pub</p>
-          <p>Date: 6/15/2022</p>
-          <p>Amount Paid: $200</p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="flex flex-item rotate-[10deg] bg-lightBlue p-5 hover:rotate-0 cursor-pointer border-4 border-black mb-8"
-    >
-      <div class="flex-item__contents font-bold text-4xl">
-        <div class="flex-item__content--info">
-          <p>Venue: Landsdowne Pub</p>
-          <p>Date: 6/15/2022</p>
-          <p>Amount Paid: $200</p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="flex flex-item rotate-[10deg] bg-lightBlue p-5 hover:rotate-0 cursor-pointer border-4 border-black mb-8"
-    >
-      <div class="flex-item__contents font-bold text-4xl">
-        <div class="flex-item__content--info">
-          <p>Venue: Landsdowne Pub</p>
-          <p>Date: 6/15/2022</p>
-          <p>Amount Paid: $200</p>
+          <p>Venue: {{ gig.venue }}</p>
+          <p>Date: {{ gig.date }}</p>
+          <p>Amount Paid: ${{ gig.amount }}</p>
         </div>
       </div>
     </div>

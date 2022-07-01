@@ -1,5 +1,13 @@
 <script setup>
+/* 
+imports
+*/
+
 import { useGigsStore } from '@/stores/gigs';
+
+/* 
+gigs store
+*/
 
 const gigsStore = useGigsStore();
 </script>

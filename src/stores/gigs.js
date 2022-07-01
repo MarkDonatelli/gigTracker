@@ -5,20 +5,16 @@ export const useGigsStore = defineStore({
   state: () => ({
     gigs: [
       {
-        venue: '',
-        amount: 200,
+        venue: 'Landsdowne Pub',
+        date: '6/15/2022',
+        amount: 800,
+        color: 'green',
       },
       {
-        venue: '',
+        venue: 'Landsdowne Pub',
+        date: '6/15/2022',
         amount: 200,
-      },
-      {
-        venue: '',
-        amount: 600,
-      },
-      {
-        venue: '',
-        amount: 200,
+        color: 'blue',
       },
     ],
   }),
@@ -31,5 +27,9 @@ export const useGigsStore = defineStore({
         }, 0);
     },
   },
-  actions: {},
+  actions: {
+    addGig(gig) {
+      this.gigs.push(gig);
+    },
+  },
 });

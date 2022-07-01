@@ -47,6 +47,6 @@
   }
 
   .btn {
-    @apply font-bold border-black border-4 bg-red-500;
+    @apply font-bold border-black border-4;
   }
 }
