@@ -33,8 +33,6 @@ const emit = defineEmits(['update:modelValue']);
 form / data
 */
 
-const error = ref(false);
-
 const formData = reactive({
   venue: '',
   date: '',
@@ -49,6 +47,9 @@ const onlyNumber = ($event) => {
     $event.preventDefault();
   }
 };
+
+// error
+const error = ref(false);
 
 /*
 form submit
